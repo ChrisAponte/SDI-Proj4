@@ -36,7 +36,22 @@ var validateEmail = function(string) {
     
 };// End validate email
 
+//Validate URL
+var validateUrl = function(string) {
+    
+    var test1 = string.substring(0, 5);
+    var test2 = string.substring(0, 6);
+    var test3 = string.substring(0, 4);
+        if (test1 === "http:" || test2 === "https:" || test3 === "www.") {
+            return true;
+        }else {
+            return false;
+    }
+    
+};// End validate email
+
 //Function calls
 
 console.log("It is " + (validatePhoneNum ("407-939-6244")) + " that it is a phone number.");
 console.log("It is " + (validateEmail ("caponte74@fullsail.edu")) + " that it is an E-mail address.");
+console.log("It is " + (validateUrl ("www.github.com")) + " that this is a valid URL.");
