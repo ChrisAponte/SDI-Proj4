@@ -3,7 +3,7 @@
 // Project 4
 
 //variables
-var numberArray = [98,76,14,24,10,62];
+var numberArray = [12,65,32,21,78,90];
 var favoriteCarsArray = [4, "Ls400", 6, "Corola", 8, "535is", 7, "Gs350", 5, "Sorento"];
 
 //String Functions
@@ -67,9 +67,28 @@ var TitleCase = function(string) {
     return stringTest;
 };// End Title-case a string
 
+//Array Functions
+
+//Find the smallest value in an array
+var findSmallValue = function(array, number) {
+    
+    array.sort(function(a,b) {return a-b;});
+        if (number >= array[0] && number < array[array.length -1]) {
+            array.push(number);
+            array.sort(function(a,b) {return a-b;});
+            var result = array[array.lastIndexOf(number) +1];
+            return result;
+        }else {
+            return null;
+        }
+    
+};//End find smallest value
+
 //Function calls
 
 console.log("It is " + (validatePhoneNum ("407-939-6244")) + " that it is a phone number.");
 console.log("It is " + (validateEmail ("caponte74@fullsail.edu")) + " that it is an E-mail address.");
 console.log("It is " + (validateUrl ("www.github.com")) + " that this is a valid URL.");
 console.log(TitleCase ("lock stock and two smoking barrels"));
+console.log("The smallest value in the array that is greater than the given number is "
+            + findSmallValue(numberArray,14));
