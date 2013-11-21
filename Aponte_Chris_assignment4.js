@@ -50,8 +50,26 @@ var validateUrl = function(string) {
     
 };// End validate email
 
+//Title-case a string
+var TitleCase = function(string) {
+    
+    var stringTest = "";
+    var stringContent = string.split(" ");
+    var index = 0;
+        while (index < stringContent.length) {
+            var mkTitle = stringContent[index].charAt(0)
+            mkTitle = mkTitle.toUpperCase();
+            var wordLength = stringContent[index].length;
+            var word = stringContent[index].substring(1, wordLength);
+            index++;
+            stringTest += mkTitle + word + " ";
+        }
+    return stringTest;
+};// End Title-case a string
+
 //Function calls
 
 console.log("It is " + (validatePhoneNum ("407-939-6244")) + " that it is a phone number.");
 console.log("It is " + (validateEmail ("caponte74@fullsail.edu")) + " that it is an E-mail address.");
 console.log("It is " + (validateUrl ("www.github.com")) + " that this is a valid URL.");
+console.log(TitleCase ("lock stock and two smoking barrels"));
