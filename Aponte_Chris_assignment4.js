@@ -26,6 +26,17 @@ var validatePhoneNum = function(string) {
     
 };// End validate phone number
 
+//Validate E-mail
+var validateEmail = function(string) {
+    
+    var atCharacter = string.lastIndexOf('@');
+    var dotCharacter = string.lastIndexOf('.');
+        return (atCharacter < dotCharacter && atCharacter > 0 && string.indexOf('@@') ==
+            -1 && dotCharacter > 2 && (string.length - dotCharacter) > 2);
+    
+};// End validate email
+
 //Function calls
 
 console.log("It is " + (validatePhoneNum ("407-939-6244")) + " that it is a phone number.");
+console.log("It is " + (validateEmail ("caponte74@fullsail.edu")) + " that it is an E-mail address.");
