@@ -84,6 +84,19 @@ var findSmallValue = function(array, number) {
     
 };//End find smallest value
 
+//Find total value of just numbers
+var totalNumberOnly = function(array) {
+    
+    var theSum = 0;
+        for (var i = 0, a = array.length; i < a; i++) {
+            if (array[i]/1 === array[i]) {
+                theSum += array[i];
+            }
+        }
+        return theSum;
+    
+};// End find total value of just numbers
+
 //Function calls
 
 console.log("It is " + (validatePhoneNum ("407-939-6244")) + " that it is a phone number.");
@@ -92,3 +105,4 @@ console.log("It is " + (validateUrl ("www.github.com")) + " that this is a valid
 console.log(TitleCase ("lock stock and two smoking barrels"));
 console.log("The smallest value in the array that is greater than the given number is "
             + findSmallValue(numberArray,14));
+console.log("The total amount of colors available in my favorite cars is " + totalNumberOnly(favoriteCarsArray));
